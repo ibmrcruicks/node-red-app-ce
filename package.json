@@ -1,19 +1,41 @@
 {
-    "name": "node-red-app",
-    "version": "1.1.3",
-    "dependencies": {
-        "@ibm-cloud/cloudant": "^0.4.1",
-        "bcrypt": "^5.1.0",
-        "body-parser": "1.x",
-        "express": "4.x",
-        "http-shutdown": "1.2.2",
-        "ibm-cloud-env": "^0",
-        "node-red": "^3.0.2"
+    "name": "node-red-docker",
+    "version": "4.1.7",
+    "description": "Low-code programming for event-driven applications",
+    "homepage": "http://nodered.org",
+    "license": "Apache-2.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/node-red/node-red-docker.git"
     },
+    "main": "node_modules/node-red/red/red.js",
     "scripts": {
-        "start": "node --max-old-space-size=160 index.js --settings ./bluemix-settings.js -v"
+        "start": "node $NODE_OPTIONS index.js --settings ./bluemix-settings.js -v $FLOWS"
+    },
+    "contributors": [
+        {
+            "name": "Dave Conway-Jones"
+        },
+        {
+            "name": "Nick O'Leary"
+        },
+        {
+            "name": "James Thomas"
+        },
+        {
+            "name": "Raymond Mouthaan"
+        }
+    ],
+    "dependencies": {
+        "node-red": "4.1.7"
+        "@ibm-cloud/cloudant": "^0.12.15",
+        "bcrypt": "^5.1.0",
+        "body-parser": "2.x",
+        "express": "5.x",
+        "http-shutdown": "1.2.2",
+        "ibm-cloud-env": "^0"
     },
     "engines": {
-        "node": "18.x"
+        "node": ">=18"
     }
 }
